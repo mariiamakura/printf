@@ -6,7 +6,7 @@
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:58:57 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/03 16:30:17 by mparasku         ###   ########.fr       */
+/*   Updated: 2023/01/03 19:03:14 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	ft_format(va_list ap, const char c)
 		total += ft_printint(va_arg(ap, unsigned int));
 	else if (c == 'x' || c == 'X')
 		total += ft_printhex(va_arg(ap, unsigned int), c);
+	else if (c == 'p')
+		total += ft_printptr(va_arg(ap, uintptr_t));
 	return (total);
 }
 
@@ -62,5 +64,7 @@ int	ft_printf(const char *str, ...)
 	char b[] = "Masha";
 	int num = 4567;
 	int total;
-	printf(" %i\n", ft_printf("Hello how %c you %s %% %i with hex %x", a, b, num, num));
+	void *ptr;
+	ptr = &num;
+	printf("\n%i\n", ft_printf("Hello how %c you %s %% %i with hex %x and pointer %p", a, b, num, num, (uintptr_t)ptr));
 } */
