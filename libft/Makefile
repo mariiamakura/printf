@@ -6,7 +6,7 @@
 #    By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 13:35:38 by mparasku          #+#    #+#              #
-#    Updated: 2022/12/27 16:35:15 by mparasku         ###   ########.fr        #
+#    Updated: 2023/01/03 14:11:12 by mparasku         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ FLAGS = -Wall -Wextra -Werror
 
 $(OBJS_DIR)%.o : %.c libft.h
 	mkdir -p $(OBJS_DIR)
-	gcc $(FLAGS) -c $< -o $@
+	cc $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS_PREFIXED)
 	ar rcs $(NAME) $(OBJECTS_PREFIXED)

@@ -6,7 +6,7 @@
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:58:57 by mparasku          #+#    #+#             */
-/*   Updated: 2022/12/27 18:25:08 by mparasku         ###   ########.fr       */
+/*   Updated: 2023/01/03 16:30:17 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_format(va_list ap, const char c)
 {
-	int total;
+	int	total;
 
 	total = 0;
 	if (c == 'c')
@@ -23,16 +23,20 @@ int	ft_format(va_list ap, const char c)
 		total += ft_printstr(va_arg(ap, char *));
 	else if (c == '%')
 		total += ft_printper();
-	else if (c == 'i')
+	else if (c == 'i' || c == 'd')
 		total += ft_printint(va_arg(ap, int));
+	else if (c == 'u')
+		total += ft_printint(va_arg(ap, unsigned int));
+	else if (c == 'x' || c == 'X')
+		total += ft_printhex(va_arg(ap, unsigned int), c);
 	return (total);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
-	int	i;
-	int	total;
+	int		i;
+	int		total;
 
 	i = 0;
 	total = 0;
@@ -40,10 +44,10 @@ int ft_printf(const char *str, ...)
 	while (str[i])
 	{
 		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]))
-			{
-				total += ft_format(ap, str[i + 1]);
-				i++;
-			}
+		{
+			total += ft_format(ap, str[i + 1]);
+			i++;
+		}
 		else
 			total += ft_printchar(str[i]);
 		i++;
@@ -52,11 +56,11 @@ int ft_printf(const char *str, ...)
 	return (total);
 }
 
-int main()
+/* int main()
 {
 	char a = 'Z';
 	char b[] = "Masha";
-	int num = -123;
+	int num = 4567;
 	int total;
-	printf(" %i\n", ft_printf("Hello how %c you %s %% %i", a, b, num));
-}
+	printf(" %i\n", ft_printf("Hello how %c you %s %% %i with hex %x", a, b, num, num));
+} */
