@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mishamakura <mishamakura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:58:57 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/03 19:03:14 by mparasku         ###   ########.fr       */
+/*   Updated: 2023/01/09 12:15:43 by mishamakura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int	ft_printf(const char *str, ...)
 	int total;
 	void *ptr;
 	ptr = &num;
-	printf("\n%i\n", ft_printf("Hello how %c you %s %% %i with hex %x and pointer %p", a, b, num, num, (uintptr_t)ptr));
+	printf("\n%i\n", ft_printf("Hello how %c you 
+	%s %% %i with hex %x and pointer %p", a, b, num, num, (uintptr_t)ptr));
 } */
