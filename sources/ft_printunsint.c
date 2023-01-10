@@ -6,7 +6,7 @@
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 14:29:49 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/10 14:42:59 by mparasku         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:45:52 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	ft_printunsint(unsigned int n)
 
 /* int main ()
 {
-	unsigned int a = 34674;
+	unsigned int a = -1;
 	ft_printunsint(a);
-	printf(" %i", ft_printunsint(a));
-} */
+	printf(" %u", ft_printunsint(a));
+}  */

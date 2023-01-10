@@ -6,7 +6,7 @@
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:58:57 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/10 14:42:42 by mparasku         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:46:01 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_format(va_list ap, const char c)
 	else if (c == 'i' || c == 'd')
 		total += ft_printint(va_arg(ap, int));
 	else if (c == 'u')
-		total += ft_printint(va_arg(ap, unsigned int));
+		total += ft_printunsint(va_arg(ap, unsigned int));
 	else if (c == 'x' || c == 'X')
 		total += ft_printhex(va_arg(ap, unsigned int), c);
 	else if (c == 'p')

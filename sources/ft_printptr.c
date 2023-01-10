@@ -6,7 +6,7 @@
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 17:23:28 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/10 15:31:32 by mparasku         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:48:20 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_printptr(uintptr_t n)
 {
 	if (n == 0)
 	{
-		write(1,"(nil)", 5);
+		write(1, "(nil)", 5);
 		return (5);
 	}
 	else
