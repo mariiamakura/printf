@@ -6,13 +6,12 @@
 #    By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 12:19:30 by mishamakura       #+#    #+#              #
-#    Updated: 2023/01/10 14:36:33 by mparasku         ###   ########.fr        #
+#    Updated: 2023/01/10 15:03:03 by mparasku         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a 
 FLAGS = -Wall -Wextra -Werror
-HEAD = includes/printflib.h
 
 SRC = 	sources/ft_printf.c\
 		sources/ft_printchar.c\
@@ -22,9 +21,6 @@ SRC = 	sources/ft_printf.c\
 		sources/ft_printptr.c\
 		sources/ft_printstr.c\
 		sources/ft_printunsint.c
-
-%.o: %.c $(HEAD)
-	cc $(FLAGS) -c $< -o $@
 
 OBJ = $(SRC:%.c=%.o)
 

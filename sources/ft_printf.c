@@ -6,11 +6,11 @@
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:58:57 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/10 14:04:57 by mparasku         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:42:42 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printflib.h"
+#include "../includes/ft_printf.h"
 #include "../libft/libft.h"
 
 int	ft_format(va_list ap, const char c)
