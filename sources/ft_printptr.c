@@ -6,7 +6,7 @@
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 17:23:28 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/10 14:42:53 by mparasku         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:31:32 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ void	ft_hexptr(uintptr_t n)
 int	ft_printptr(uintptr_t n)
 {
 	if (n == 0)
-		return (write(1, "0", 1));
+	{
+		write(1,"(nil)", 5);
+		return (5);
+	}
 	else
 	{
 		ft_printstr("0x");
@@ -59,4 +62,13 @@ int	ft_printptr(uintptr_t n)
 	ptr = &a;
 	result = ft_printptr((uintptr_t) ptr);
 	printf("\n%p \n%i", ptr, result);
+	ft_printptr(0);
 } */
+
+/* int main()
+{
+	printf("\n%p %p", 0, 0);
+ 	ft_printptr(0);
+	ft_printptr(0);
+	return(0);
+}  */
