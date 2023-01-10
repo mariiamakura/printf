@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mishamakura <mishamakura@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:58:57 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/09 12:15:43 by mishamakura      ###   ########.fr       */
+/*   Updated: 2023/01/10 14:04:57 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "../includes/printflib.h"
+#include "../libft/libft.h"
 
 int	ft_format(va_list ap, const char c)
 {

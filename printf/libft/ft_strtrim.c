@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printper.c                                      :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 14:47:42 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/03 14:47:53 by mparasku         ###   ########.fr       */
+/*   Created: 2022/12/08 15:07:32 by mishamakura       #+#    #+#             */
+/*   Updated: 2022/12/14 13:36:37 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "libft.h"
 
-int	ft_printper(void)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	write(1, "%", 1);
-	return (1);
+	size_t	i;
+
+	if (!s1 || !set)
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }
+
+/* int main ()
+{
+    char sen[] = "eeeeettttaatteeetetetoootteee";
+    char set[] = "et";
+    printf("%s\n", ft_strtrim(sen, set));
+} */

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 17:09:19 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/03 14:48:21 by mparasku         ###   ########.fr       */
+/*   Created: 2022/11/30 15:40:15 by mparasku          #+#    #+#             */
+/*   Updated: 2022/12/06 14:12:16 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "libft.h"
 
-int	ft_printstr(char *str)
+int	ft_isalnum(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i += ft_printchar(str[i]);
-	return (i);
+	if ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+		return (1);
+	return (0);
 }
+
+/* int main()
+{
+    printf("%i\n", ft_isalnum(35));
+    printf("%i\n", isalnum(35));
+} */

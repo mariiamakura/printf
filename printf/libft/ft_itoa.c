@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printunsint.c                                   :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 14:29:49 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/03 14:55:25 by mparasku         ###   ########.fr       */
+/*   Created: 2022/12/13 14:55:32 by mparasku          #+#    #+#             */
+/*   Updated: 2023/01/03 14:32:22 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "libft.h"
 
-size_t	int_ulen(unsigned int n)
+size_t	int_len(long n)
 {
 	size_t	i;
 
@@ -30,7 +30,7 @@ size_t	int_ulen(unsigned int n)
 	return (i);
 }
 
-char	*ft_positive(char *str, unsigned int num, size_t len_int)
+char	*ft_positive(char *str, long num, size_t len_int)
 {
 	while (num > 0)
 	{
@@ -41,14 +41,14 @@ char	*ft_positive(char *str, unsigned int num, size_t len_int)
 	return (str);
 }
 
-char	*ft_uitoa(unsigned int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	size_t	len_int;
 	long	num;
 
 	num = n;
-	len_int = int_ulen(n);
+	len_int = int_len(n);
 	str = malloc((len_int + 1) * sizeof(char));
 	if (!str)
 		return (0);
@@ -58,26 +58,17 @@ char	*ft_uitoa(unsigned int n)
 		str[0] = 48 + num;
 		return (str);
 	}
+	if (num < 0)
+	{
+		str[0] = '-';
+		num = num * -1;
+	}
 	if (num > 0)
 		str = ft_positive(str, num, len_int);
 	return (str);
 }
 
-int	ft_printunsint(unsigned int n)
+/* int	main()
 {
-	int		total;
-	char	*str;
-
-	total = 0;
-	str = ft_uitoa(n);
-	total += ft_printstr(str);
-	free(str);
-	return (total);
-}
-
-/* int main ()
-{
-	unsigned int a = 34674;
-	ft_printunsint(a);
-	printf(" %i", ft_printunsint(a));
+	printf("%s\n", ft_itoa(-1234234567));
 } */

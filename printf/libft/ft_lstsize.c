@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printint.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 17:44:20 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/03 14:47:22 by mparasku         ###   ########.fr       */
+/*   Created: 2022/12/21 13:20:05 by mparasku          #+#    #+#             */
+/*   Updated: 2022/12/21 17:07:18 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "libft.h"
 
-int	ft_printint(int n)
+int	ft_lstsize(t_list *lst)
 {
-	int		total;
-	char	*str;
+	int	i;
 
-	total = 0;
-	str = ft_itoa(n);
-	total += ft_printstr(str);
-	free(str);
-	return (total);
+	if (!lst)
+		return (0);
+	i = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
-
-/* int main ()
-{
-	int a = 0;
-	ft_printint(a);
-} */

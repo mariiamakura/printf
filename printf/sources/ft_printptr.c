@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printhex.c                                      :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 15:05:49 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/03 18:39:28 by mparasku         ###   ########.fr       */
+/*   Created: 2023/01/03 17:23:28 by mparasku          #+#    #+#             */
+/*   Updated: 2023/01/10 14:04:44 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "../includes/printflib.h"
+#include "../libft/libft.h"
 
-int	len_hex(unsigned int n)
+int	len_hexprt(uintptr_t n)
 {
 	int	i;
 
@@ -22,36 +23,40 @@ int	len_hex(unsigned int n)
 		n = n / 16;
 		i++;
 	}
-	return (i);
+	return (i + 2);
 }
 
-void	ft_hex(unsigned int n, char format)
+void	ft_hexptr(uintptr_t n)
 {
 	if (n >= 16)
 	{
-		ft_hex(n / 16, format);
-		ft_hex(n % 16, format);
+		ft_hexptr(n / 16);
+		ft_hexptr(n % 16);
 	}
 	else
-	{
-		if (format == 'x')
-			ft_printchar("0123456789abcdef"[n]);
-		if (format == 'X')
-			ft_printchar("0123456789ABCDEF"[n]);
-	}
+		ft_printchar("0123456789abcdef"[n]);
 }
 
-int	ft_printhex(unsigned int n, char format)
+int	ft_printptr(uintptr_t n)
 {
 	if (n == 0)
 		return (write(1, "0", 1));
 	else
-		ft_hex(n, format);
-	return (len_hex(n));
+	{
+		ft_printstr("0x");
+		ft_hexptr(n);
+	}
+	return (len_hexprt(n));
 }
 
 /* int main()
 {
-	ft_hex(4567, 'x');
-}
- */
+	int a;
+	int result;
+	void	*ptr;
+
+	a = 5;
+	ptr = &a;
+	result = ft_printptr((uintptr_t) ptr);
+	printf("\n%p \n%i", ptr, result);
+} */

@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printchar.c                                     :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mparasku <mparasku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 17:12:03 by mparasku          #+#    #+#             */
-/*   Updated: 2023/01/03 14:45:22 by mparasku         ###   ########.fr       */
+/*   Created: 2022/11/30 17:24:08 by mparasku          #+#    #+#             */
+/*   Updated: 2022/12/09 17:48:16 by mparasku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "libft.h"
 
-int	ft_printchar(const char c)
+int	ft_isprint(int c)
 {
-	write(1, &c, 1);
-	return (1);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
+
+/* int main()
+{
+    printf("%i\n", ft_isprint(32));
+    printf("%i\n", isprint(32));
+} */
